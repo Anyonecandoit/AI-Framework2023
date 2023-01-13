@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.testng.annotations.Test;
 
-import driver.Driver;
 import driver.DriverManager;
 
 public class LoginpageTests  extends BaseTest{
@@ -18,7 +17,7 @@ public class LoginpageTests  extends BaseTest{
 	public void test1() {
 
 
-		DriverManager.getDriver().findElement(By.name("e")).sendKeys("Automation",Keys.ENTER);
+		DriverManager.getDriver().findElement(By.name("q")).sendKeys("Automation",Keys.ENTER);
 
 
 	}

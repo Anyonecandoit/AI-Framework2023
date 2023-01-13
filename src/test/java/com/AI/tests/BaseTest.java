@@ -13,8 +13,11 @@ public class BaseTest {
 
 
 	@BeforeMethod
-
-	public void setUp() {
+// here IO Exception is  coming  to the method because driver is taking the data from property file and in the get value method it is having exception IO .So it will be populate same to driver .
+	
+	
+	// once we apply null check condition to the value of get property key , the IO exception will be changed to "Exception" due to implementation of new method.
+	protected void setUp() throws Exception {
 		Driver.initDriver();
 
 	}
@@ -22,7 +25,7 @@ public class BaseTest {
 
 	@AfterMethod
 
-	public void tearDown() {
+	protected void tearDown() {
 		Driver.quitDriver();
 
 
