@@ -19,6 +19,8 @@ public class BaseTest {
 	}
 
 	
+	// so we are using reports in listeners there is no use for before and after sutie now because in listeners we are overriding the methods of ISuite listener class
+	
 	/**
 	@BeforeSuite
 	
