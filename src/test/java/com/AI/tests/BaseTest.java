@@ -1,7 +1,14 @@
 package com.AI.tests;
 
+import java.io.IOException;
+
+import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+
+import com.AI.Reports.ExtentReport;
 
 import driver.Driver;
 
@@ -11,7 +18,25 @@ public class BaseTest {
 
 	}
 
+	
+	/**
+	@BeforeSuite
+	
+	public void beforeSuite() {
+		// ExtentReport.initReports();    //  moving this to listerners in ISUITE one on START test for better code optimisation
+		//  Main reason why we are removing reports from suite is to make sure Test is not tightly coupled with the Reports . Test needs to be test , it should be free from other actions in the model.
+	}
+	*/
+	
+	/**@AfterSuite
+	
 
+	public void AfterSuite()  {
+		 // ExtentReport.flushReports();     //  moving this to listeners
+		
+	} */
+	
+	
 	@BeforeMethod
 // here IO Exception is  coming  to the method because driver is taking the data from property file and in the get value method it is having exception IO .So it will be populate same to driver .
 	
@@ -25,7 +50,15 @@ public class BaseTest {
 
 	@AfterMethod
 
-	protected void tearDown() {
+	/**protected void tearDown(ITestResult result) {   we use listeners because of this reason in listerners also we have pass , fail , skip and in reports also we can log status but to avoid this confusion , we will create a listeners package.
+		
+		if (result.equals(ITestResult.SUCCESS){
+			
+		}*/
+		
+		protected void tearDown() {
+			
+			
 		Driver.quitDriver();
 
 

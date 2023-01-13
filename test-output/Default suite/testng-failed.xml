@@ -7,7 +7,9 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
+          <include name="beforeSuite"/>
           <include name="getalllinks"/>
+          <include name="AfterSuite"/>
         </methods>
       </class> <!-- com.AI.tests.TechieDelightTest -->
     </classes>

@@ -2,9 +2,7 @@ package com.AI.pages;
 
 import org.openqa.selenium.By;
 
-import com.tmb.enums.WaitStrategy;
-
-import driver.DriverManager;
+import com.AI.Reports.ExtentManager;
 
 public class TechiedelightPage  extends Basepage{
 
@@ -14,7 +12,12 @@ public class TechiedelightPage  extends Basepage{
 //	BY by = BY by 
 	
 	public TechiedelightPage gettext() {
+		
+		
 		getLinksText(Links);
+		
+		
+		
 		return this;
 	}
 	
