@@ -17,6 +17,8 @@ public class TechiedelightPage  extends Basepage{
 		getLinksText(Links);
 		return this;
 	}
+	
+	
 		
 	}
 	
