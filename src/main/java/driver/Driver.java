@@ -12,7 +12,7 @@ public class Driver {
 
 	
 	
-	// private constuctor is helpful for no one can call this class .
+	// private constructor is helpful for no one can call this class .
 private Driver() {
 	
 }

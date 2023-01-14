@@ -30,12 +30,8 @@ public class ListenerClass  implements ITestListener , ISuiteListener{
 			
 			e.printStackTrace();
 		}
-		 try {
-			Desktop.getDesktop().browse(new File(FrameworkConstants.getReportPath()).toURI());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		
+		 
 	}
 
 	@Override
