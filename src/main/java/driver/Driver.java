@@ -19,7 +19,15 @@ private Driver() {
 
 //once we apply null check condition to the value of get property key , the IO exception will be changed to "Exception" due to implementation of new method.
 //public static  void initDriver() throws IOException
-public static  void initDriver() throws Exception {
+
+	
+
+	
+	// private constructor is helpful for no one can call this class .
+
+//once we apply null check condition to the value of get property key , the IO exception will be changed to "Exception" due to implementation of new method.
+//public static  void initDriver() throws IOException
+public static  void initDriver() throws Exception  {
 		//if(driver==null)
 		
 		//checking the null condition for driver 
@@ -50,8 +58,7 @@ public static  void initDriver() throws Exception {
 			
 			// unload will clear the driver instance and reset driver to null
 			DriverManager.unload();
-
-		}}
-
+		}
+	}
 
 }

@@ -103,7 +103,7 @@ public final class ReadPropertyFile {
 	}
 	
 	public static  String get(String key) throws Exception {
-		if (Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key)))
+		if (Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key).toLowerCase()))  // adding lowercase for ENUM 
 		{
 		
 		throw new Exception ("Property name "+ key + "is not found . please check config properties");}
