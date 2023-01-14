@@ -1,7 +1,13 @@
 package com.AI.tests;
 
+import java.awt.Desktop;
+import java.io.File;
+import java.io.IOException;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import com.AI.constants.FrameworkConstants;
 
 import driver.Driver;
 
@@ -51,11 +57,11 @@ public class BaseTest {
 			
 		}*/
 		
-		protected void tearDown() {
+		protected void tearDown() throws Throwable {
 			
 			
 		Driver.quitDriver();
 
-
+		Desktop.getDesktop().browse(new File(FrameworkConstants.getReportPath()).toURI());
 	}
 }

@@ -31,7 +31,7 @@ private static final String REPORT_PATH = System.getProperty("user.dir")+"/index
 	
 	private static final int EXPLICITWAIT = 10;
 
-	private static String getResourcespath() {
+	public static String getResourcespath() {
 		return RESOURCESPATH;
 	}
 
