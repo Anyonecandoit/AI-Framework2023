@@ -13,10 +13,15 @@ public class NopCommercepage extends Basepage{
 	By button = By.xpath("//button[contains(text(),'Log in')]" );
 
 
+	
+	
+		
+	
 	public  NopCommercepage   enterEmail() throws Throwable {
+	
 
-		sendkeys(email , "Testuser@mailinator.com", WaitStrategy.PRESENCE);
-		return this;
+		sendkeys(By.xpath("//input[@id='Email']"), "Test2022@mailinator.com", WaitStrategy.PRESENCE);
+		return this ;
 	}
 
 	public  NopCommercepage enterPassword() {
