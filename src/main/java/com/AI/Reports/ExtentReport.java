@@ -1,7 +1,5 @@
 package com.AI.Reports;
 
-import java.awt.Desktop;
-import java.io.File;
 import java.io.IOException;
 
 import com.AI.constants.FrameworkConstants;

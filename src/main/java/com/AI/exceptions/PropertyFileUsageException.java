@@ -4,12 +4,7 @@ package com.AI.exceptions;
  * Runtime Exception occurs when the key or value fetched from the property file
  * is null Jan 21, 2021
  * 
- * @author Amuthan Sakthivel
- * @version 1.0
- * @since 1.0
- * @see com.tmb.constants.FrameworkConstants
- * @see com.tmb.utils.PropertyUtils
- */
+***/
 @SuppressWarnings("serial")
 public class PropertyFileUsageException extends FrameworkException {
 

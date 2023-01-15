@@ -1,7 +1,5 @@
 package com.AI.listeners;
 
-import java.awt.Desktop;
-import java.io.File;
 import java.io.IOException;
 
 import org.testng.ISuite;
@@ -12,7 +10,6 @@ import org.testng.ITestResult;
 
 import com.AI.Reports.ExtentManager;
 import com.AI.Reports.ExtentReport;
-import com.AI.constants.FrameworkConstants;
 
 public class ListenerClass  implements ITestListener , ISuiteListener{
 
