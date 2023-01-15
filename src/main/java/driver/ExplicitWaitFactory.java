@@ -1,4 +1,4 @@
-package com.tmb.factories;
+package driver;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -7,8 +7,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.AI.constants.FrameworkConstants;
 import com.AI.enums.WaitStrategy;
-
-import driver.DriverManager;
 
 /**
  * Explicit wait factory produces different waits before operating on webelement
@@ -37,7 +35,7 @@ public final class ExplicitWaitFactory {
 	 * 
 	 * @author Amuthan Sakthivel Jan 21, 2021
 	 * @param waitstrategy Strategy to be applied to find a webelement
-	 *                     {@link com.AI.enums.WaitStrategy}
+	 *                     {@link com.tmb.enums.WaitStrategy}
 	 * @param by           By locator of the webelement
 	 * @return webelement Locates and return the webelement
 	 */
@@ -55,6 +53,9 @@ public final class ExplicitWaitFactory {
 		} else if (waitstrategy == WaitStrategy.NONE) {
 			element = DriverManager.getDriver().findElement(by);
 		}
+		
+	ExpectedConditions.elementToBeClickable(by);
+
 		return element;
 	}
 

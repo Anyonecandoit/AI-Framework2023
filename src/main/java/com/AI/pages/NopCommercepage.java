@@ -2,11 +2,13 @@ package com.AI.pages;
 
 import org.openqa.selenium.By;
 
-import com.tmb.enums.WaitStrategy;
+import com.AI.enums.WaitStrategy;
 
 public class NopCommercepage extends Basepage{
 
 	By email = By.xpath("//input[@id='Email']");
+	
+	
 
 	By Password = By.xpath("//input[@id='Password']");
 
@@ -15,12 +17,16 @@ public class NopCommercepage extends Basepage{
 
 	
 	
-		
+		// sendkeys(BY by , String value ,WaitStrategy waitstrategy ){
+	
+	
+	
+
 	
 	public  NopCommercepage   enterEmail() throws Throwable {
 	
 
-		sendkeys(By.xpath("//input[@id='Email']"), "Test2022@mailinator.com", WaitStrategy.PRESENCE);
+		sendkeys(email, "kranthi@mailinator.com", WaitStrategy.PRESENCE);
 		return this ;
 	}
 

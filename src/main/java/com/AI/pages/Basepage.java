@@ -5,7 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
-import com.tmb.enums.WaitStrategy;
+import com.AI.enums.WaitStrategy;
 import com.tmb.factories.ExplicitWaitFactory;
 
 public class Basepage {

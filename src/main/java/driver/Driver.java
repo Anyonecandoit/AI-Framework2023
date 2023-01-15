@@ -1,12 +1,11 @@
 package driver;
 
+import java.net.MalformedURLException;
 import java.util.Objects;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import com.AI.enums.ConfigProperties;
+import com.AI.utils.PropertyUtils;
 
-import com.AI.constants.FrameworkConstants;
-import com.AI.utils.ReadPropertyFile;
 
 public class Driver {
 
@@ -20,6 +19,9 @@ private Driver() {
 
 //once we apply null check condition to the value of get property key , the IO exception will be changed to "Exception" due to implementation of new method.
 //public static  void initDriver() throws IOException
+
+
+/**
 public static  void initDriver() throws Exception  {
 		//if(driver==null)
 				//checking the null condition for driver 
@@ -33,14 +35,32 @@ public static  void initDriver() throws Exception  {
 			DriverManager.getDriver().get(ReadPropertyFile.get("url")); // inputout exception will come because it is using property file exception
 				}
 	}
+ * @throws Exception 
+**/
 
-	public static  void quitDriver() {
-		//	if(driver!=null)
-		if(Objects.nonNull(DriverManager.getDriver())) {
-			DriverManager.getDriver().quit();
-		// unload will clear the driver instance and reset driver to null
-			DriverManager.unload();
+public static void initDriver(String browser) {
+	
+	if (Objects.isNull(DriverManager.getDriver())) {
+		try {
+			DriverManager.setDriver(DriverFactory.getDriver(browser));
+			
+
+		} catch (MalformedURLException e) {
+			throw new com.AI.exceptions.BrowserInvocationFailedException("Please check the capabilities of browser");
 		}
+		DriverManager.getDriver().get(PropertyUtils.get(ConfigProperties.URL));
+		//DriverManager.getDriver().get(PropertyUtils.get(ConfigProperties.BROWSER));  tried but not working 
+		//DriverManager.getDriver().get(PropertyUtils.get(ConfigProperties.VERSION));
 	}
+}
+
+	
+public static void quitDriver() {
+	if (Objects.nonNull(DriverManager.getDriver())) {
+		DriverManager.getDriver().quit();
+		DriverManager.unload();
+	}
+}
 
 }
+

@@ -2,12 +2,14 @@ package com.AI.tests;
 
 import java.awt.Desktop;
 import java.io.File;
-import java.io.IOException;
+import java.util.Map;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import com.AI.constants.FrameworkConstants;
+import com.AI.enums.ConfigProperties;
+import com.AI.utils.PropertyUtils;
 
 import driver.Driver;
 
@@ -29,7 +31,8 @@ public class BaseTest {
 	}
 	*/
 	
-	/**@AfterSuite
+	/**@throws Exception 
+	 * @AfterSuite
 	
 
 	public void AfterSuite()  {
@@ -38,19 +41,28 @@ public class BaseTest {
 	} */
 	
 	
+	
 	@BeforeMethod
 // here IO Exception is  coming  to the method because driver is taking the data from property file and in the get value method it is having exception IO .So it will be populate same to driver .
 	
 	
 	// once we apply null check condition to the value of get property key , the IO exception will be changed to "Exception" due to implementation of new method.
 	protected void setUp() throws Exception {
-		Driver.initDriver();
+	
+			String browser = PropertyUtils.get(ConfigProperties.BROWSER);
+	  //  String version = PropertyUtils.get(ConfigProperties.VERSION);
+	//    Driver.initDriver();
+		   
+	    
+	    		Driver.initDriver(browser);
+		    
+		   
+		}
+	
 
-	}
-
-
+	
 	@AfterMethod
-
+	
 	/**protected void tearDown(ITestResult result) {   we use listeners because of this reason in listerners also we have pass , fail , skip and in reports also we can log status but to avoid this confusion , we will create a listeners package.
 		
 		if (result.equals(ITestResult.SUCCESS){

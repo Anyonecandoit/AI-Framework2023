@@ -1,4 +1,4 @@
-package com.tmb.enums;
+package com.AI.enums;
 
 public enum LogType {
 

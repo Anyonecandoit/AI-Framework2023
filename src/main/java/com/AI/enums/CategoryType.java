@@ -1,4 +1,4 @@
-package com.tmb.enums;
+package com.AI.enums;
 
 /**
  * Enums to restrict the values allowed for grouping the tests.
