@@ -2,7 +2,9 @@ package com.AI.pages;
 
 import java.util.List;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebElement;
 
 import com.AI.enums.WaitStrategy;
@@ -20,7 +22,7 @@ public class Basepage {
 			{
 				System.out.println(li.get(i).getText());
 			}*/
-
+		li.forEach(e -> System.out.println(e.getText()));
 		return   li ;
 	}
 
@@ -35,6 +37,32 @@ public class Basepage {
 	}
 
 
+	
+	public void select(By by , WaitStrategy waitstartegy ) {
+	  
 
+	
+
+	    WebElement element1=ExplicitWaitFactory.performExplicitWait(waitstartegy, by);
+		element1.click();
+
+
+	
+	  
+	    
+	    
+	  
+	        Alert alert = driver.DriverManager.getDriver().switchTo().alert();
+	       
+	        alert.accept();
+	       // alert.dismiss();
+	     alert.getText();
+	       
+	        alert.getText();
+	        
+	   
+	       System.out.println("text of alert is  " + alert);
+	   
+	}
 
 }

@@ -26,7 +26,7 @@ public class NopCommercepage extends Basepage{
 	public  NopCommercepage   enterEmail() throws Throwable {
 	
 
-		sendkeys(email, "kranthi@mailinator.com", WaitStrategy.PRESENCE);
+		sendkeys(email, "kranthi20231@mailinator.com", WaitStrategy.PRESENCE);
 		return this ;
 	}
 

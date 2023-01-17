@@ -3,10 +3,9 @@ package com.AI.pages;
 public class NopCommerceHomePage {
 
 	
-	
-	
-	private NopCommerceHomePage NopCommerceHomePage() {
+	public void  nocommerehomepage() {
 		
-		return null;
+		return ;
 	}
+	
 }
